@@ -22,8 +22,8 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.preprocessing import StandardScaler
 
-BASE_DIR = r"C:\Users\DELL\.gemini\antigravity\scratch\predictive_maintenance_system"
-DATA_DIR = os.path.join(BASE_DIR, "data")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = BASE_DIR
 
 
 class PredictiveMaintenanceEngine:
