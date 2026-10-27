@@ -1,0 +1,58 @@
+{
+  "Total_Records": 27300,
+  "Valid_Records": 27280,
+  "Missing_Values": 14,
+  "Duplicate_Records": 6,
+  "Abnormal_Sensor_Readings": 182,
+  "Data_Quality_Percentage": 99.93,
+  "Pipeline_Stages": [
+    {
+      "stage": "1. Timestamp Validation",
+      "status": "Passed",
+      "records_validated": 27300,
+      "errors": 0
+    },
+    {
+      "stage": "2. Machine ID Validation",
+      "status": "Passed",
+      "records_validated": 27300,
+      "errors": 0
+    },
+    {
+      "stage": "3. Missing Value Imputation",
+      "status": "Passed",
+      "records_fixed": 14,
+      "method": "Forward-Fill + Median"
+    },
+    {
+      "stage": "4. Duplicate De-duplication",
+      "status": "Passed",
+      "records_deduped": 6,
+      "method": "Primary Key Dedupe"
+    },
+    {
+      "stage": "5. Outlier Detection (Z-Score > 3.0)",
+      "status": "Alert",
+      "outliers_flagged": 182,
+      "method": "Adaptive Z-Score & Physics Range"
+    },
+    {
+      "stage": "6. Sensor Normalization",
+      "status": "Passed",
+      "records_normalized": 27300,
+      "method": "MinMax & Standard Scaler"
+    },
+    {
+      "stage": "7. Maintenance History Matching",
+      "status": "Passed",
+      "matches": 606,
+      "unmatched": 0
+    },
+    {
+      "stage": "8. Production Schedule Synchronization",
+      "status": "Passed",
+      "matches": 2100,
+      "unmatched": 0
+    }
+  ]
+}
